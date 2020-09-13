@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header'); -%>
+
+    <body>
+        <div class="container main-content-1">
+            <h1 class="post-title h1-text">
+                Where to?
+            </h1>
+            <div class="main-content">
+                <form action="/support/where-to" method="POST">
+                    <div class="input-wrapper">
+                        <label>Countries you can choose</label>
+                        <input name="countries" class="form-control" placeholder=" " />
+                    </div>
+                    <div class="form-align"> <a class="doyouneed"><span>Do you know your diagnosis<i class="far fa-circle yes-or-no" > yes</i><i class="far fa-circle yes-or-no" > no</i></a></div>
+                    <div class="form-align">
+                        <div class="form-align">
+                            <label>In specialty</label>
+                            <input name="inspecialty" class="form-control" placeholder=" " />
+                        </div>
+                        <div class="form-align">
+                            <a herf="support/register-a-support" class="click"><span>Click <button class="btn-here"> here </button> if you to update. Patnlent Profile-which will be used for all hospitals you may choose later.</span></a>
+                        </div>
+                        <div class="form-align"> <a class="expected"><span>Expected time to come</span>
+                        <input class="expected-time"> <input class="expected-time">
+                        </a> </div>
+                        <div class="form-align doyouneed-1"> <a class="doyouneed"><span>Do you need our (free) support? <i class="far fa-circle yes-or-no" > yes</i><i class="far fa-circle yes-or-no" > no</i></a></div>
+                        <a href="/home" class="btn btn-primary btn-user btn-send">Search</a>
+                        <a href="/home" class="btn btn-primary btn-user btn-return">Return</a>
+                    </div>
+                </form>
+            </div>
+
+
+            <%- include('layouts/scripts'); -%>
+    </body>
+
+</html>

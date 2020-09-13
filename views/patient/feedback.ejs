@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header'); -%>
+
+    <body>
+        <div class="container main-content-1">
+            <div class="main-content">
+                <h1 class="post-title h1-text">Feedback</h1>
+                <div class="Feedback-menu">
+                    <p>We always appreciate and acknowledge your valuable contributions</p>
+                </div>
+                <form action="/about/feedback" method="POST">
+                    <div class="form-group align">
+                        <div class="input-wrapper">
+                            <label>Full Name</label>
+                            <input name="fullname" class="form-control" placeholder="Full Name" />
+                        </div>
+                    </div>
+                    <div class="form-group align" id="email">
+                        <div class="input-wrapper">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="form-group align">
+                        <div class="send-feedback">
+                            <label>Send Feedback</label>
+                            <div>
+                                <input name="sendFeedback" class="form-control div1" placeholder="Send feedback" />
+                            </div>
+                        </div>
+                    </div>
+                    <a href="home" class="btn btn-primary btn-user btn-send">Send</a>
+            </div>
+            </form>
+        </div>
+        <%- include('layouts/scripts'); -%>
+    </body>
+
+</html>

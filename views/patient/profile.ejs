@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('layouts/header'); -%>
+
+    <body>
+
+        <!-- Navigation -->
+        <%- include('layouts/navbar'); -%>
+
+            <!-- Page Header -->
+            <header class="masthead">
+                <!-- <div class="overlay"></div> -->
+                <!-- <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-10 mx-auto">
+                            <div class="site-heading">
+                                <h1>HOSPITANICA</h1>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </header>
+
+            <!-- Main Content -->
+            
+            <div class="container">
+                <% user.forEach((user) => { %>
+                    <div class="patient-fluid" >
+                        
+                        <form action="" method="POST">
+                            <nav class="navbar navbar-expand-lg">
+                                <h3>PATIENT PROFILE</h3>
+                                <ul class="navbar-nav ml-auto">
+                                    <input id="save-btn" class="btn btn-primary" type="submit" value="Save" >
+                                </ul>
+                            </nav>
+                            <div class="container">
+                                <div class="patient-prof">
+                                <div class="row-1">
+                                <div class="col-sm-10">
+                                    <div class="row-1">
+                                        <label class="col-sm-3">First name</label>
+                                        <div class="col-sm-2">
+                                            <input name="firstName" class="form-control" value="<%= user.firstName %>" />
+                                        </div>
+                                        <label class="col-sm-2">Last name</label>
+                                        <div class="col-sm-2">
+                                            <input name="lastName" class="form-control" value="<%= user.lastName %>" />
+                                        </div>
+                                    </div>
+                                </br>
+                                    <div class="row-1">   
+                                        <label class="col-sm-3">OR fullname (as in passport)</label>
+                                        <div class="col-sm-2">
+                                            <input name="orFullname" class="form-control" value="<%= user.orFullname %>" />
+                                        </div>
+                                    </div>
+                                <br>
+                                    <div class="row-1">
+                                        <label class="col-sm-3">Date of birth</label>
+                                        <div class="col-sm-2">
+                                            <input name="dateOfBirth" class="form-control" value="<%= user.dateOfbirth %>" />
+                                        </div>
+                                        <label class="col-sm-2">Gender</label>
+                                        <div class="col-sm-2">
+                                            <input name="gender" class="form-control" value="<%= user.gender %>" />
+                                        </div>
+                                    </div>
+                                </br>
+                                    <div class="row-1">
+                                        <label class="col-sm-3">Nationality</label>
+                                        <div class="col-sm-2">
+                                            <input name="nationality" class="form-control" value="<%= user.nationality %>" />
+                                        </div>
+                                    </div>
+                                </br>  
+                                    <div class="row-1">
+                                        <label class="col-sm-3">Country of residence</label>
+                                        <div class="col-sm-2">
+                                            <input name="countryOfResidence" class="form-control" value="<%= user.countryOfResidence %>" />
+                                        </div>
+                                    </div>
+                                <br>
+                                    <div class="row-1">
+                                        <label class="col-sm-3">Passport/ID card#</label>
+                                        <div class="col-sm-2">
+                                            <input name="passport" class="form-control" value="<%= user.passport %>" />
+                                        </div>
+                                    </div>
+                                </br>
+                                    <div class="row-1">
+                                        <label class="col-sm-3">Expired date</label>
+                                        <div class="col-sm-2">
+                                            <input name="expiredDate" class="form-control" value="<%= user.expiredDate %>" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="container">
+                                        <img class="img-ptr" src="/img/avatar.png" />
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <% }) %>
+            </div>
+
+            <!-- Footer -->
+            <%- include('layouts/footer'); -%>
+                <%- include('layouts/scripts'); -%>
+
+    </body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header'); -%>
+
+    <body>
+        <div class="container main-content-2">
+            <h1 class="post-title h1-text">
+                Registration of support
+            </h1>
+            <div class="main-content" id="name">
+                <form action="/support/register-a-support">
+                    <div class="input-wrapper">
+                        <label for="fullname">Full Name</label>
+                        <input type="fullname" id="fullname" name="fullname" class="form-control" placeholder=" " />
+                        <div id="fullname-error" class="message-error"></div>
+                    </div>
+                    <div class="input-wrapper">
+                        <label>E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder=" " />
+                        <div id="email-error" class="message-error"></div>
+                    </div>
+                    <div class="input-wrapper patientProfile">
+                        <label>Patient Profile</label>
+                        <input type="file" id="file" name="patientProfile" class="form-control" />
+                    </div>
+                    <a href="/home" class="btn btn-primary btn-user btn-send">Search</a>
+                    <a href="/home" class="btn btn-primary btn-user btn-return">Return</a>
+                </form>
+            </div>
+        </div>
+
+        <%- include('layouts/scripts'); -%>
+
+    </body>
+
+</html>
