@@ -1,6 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Medical = mongoose.model('medicalreport');
+const User = mongoose.model('User');
+
+exports.loadMedical = function(req, res){
+    User.findById(req.params.id)
+    .then(() => {
+        Medical.find({})
+        .then(() =>{
+            res.render('./patient/medical-report', {userId : req.session.userId})
+        })
+    })
+    .catch(err => {
+        console.log('Error: ', err);
+        throw err;
+    })
+}
 
 exports.addmedical = function(req, res) {
     if (req.body.firstName && req.body.lastName && req.body.orFullname && req.body.gender) {
@@ -23,7 +38,7 @@ exports.addmedical = function(req, res) {
         medical.treatment = req.body.treatment;
         medical.medicalrecorfile = req.body.medicalrecorfile;
         console.log(medical);
-        medical.save((err, doc) => {
+        medical.save((err, user) => {
             if (!err)
                 res.redirect('/schedule-management');
             else {

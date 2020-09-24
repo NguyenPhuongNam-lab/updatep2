@@ -16,6 +16,7 @@ const aboutPatientRoute = require('./route/aboutPatientRoute');
 const supportRoute = require('./route/supportRoute');
 const profileRoute = require('./route/profileRoute');
 // const profileEditRoute = require('./route/profile-editRoute');
+// const yourbookingRoute = require('./route/yourbookingRoute');
 
 const CreateHospitalRoute = require('./route/CreateHospitalRoute');
 const listHospitalRoute = require('./route/listHospitalRoute');
@@ -79,6 +80,7 @@ app.use('/schedule-management', scheduleManagementRoute);
 app.use('/about', aboutPatientRoute);
 app.use('/support', supportRoute);
 app.use('/profile',profileRoute);
+// app.use('/your-booking',yourbookingRoute);
 // app.use('/profile-edit',profileEditRoute);
 //admin
 app.use('/create-hospital', CreateHospitalRoute);

@@ -40,11 +40,9 @@ var medicalSchema = new mongoose.Schema({
     },
     languagesupport: {
         type: String,
-        required: 'This field is required.'
     },
     medicalHistory: {
         type: String,
-        required: 'This field is required.'
     },
     diagnosis: {
         type: String,

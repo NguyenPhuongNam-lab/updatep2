@@ -1,6 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const scheduleAdd = mongoose.model('scheduleManagement');
+const User = mongoose.model('User');
+
+exports.loadSchedule = function(req, res){
+    User.findById(req.params.id)
+    .then(() => {
+        scheduleAdd.find({})
+        .then(() =>{
+            res.render('./patient/schedule-management', {userId : req.session.userId})
+        })
+    })
+    .catch(err => {
+        console.log('Error: ', err);
+        throw err;
+    })
+}
 
 exports.scheduleNew = function(req, res) {
     if (req.body.fullName && req.body.DateOfBirth && req.body.Phone && req.body.Address) {
@@ -36,8 +51,6 @@ exports.scheduleNew = function(req, res) {
             }
         });
     }
-}
-
 function handleValidationError(err, body) {
     for (field in err.errors) {
         switch (err.errors[field].path) {
@@ -53,5 +66,6 @@ function handleValidationError(err, body) {
             default:
                 break;
         }
+    }
     }
 }

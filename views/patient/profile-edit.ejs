@@ -14,13 +14,14 @@
             <!-- Main Content -->
             <div class="row">
             <div class="container">
-                <% user.forEach((user) => { %>
                     <div class="patient-fluid" >
+                        <% user.forEach((user) => { %>
+                        <form action="" method="POST">
                             <nav class="navbar navbar-expand-lg">
                                 <h3>PATIENT PROFILE</h3>
-                                <input name="id" value="<%= user._id %>"  hidden/>                                
+                                <input name="id" class="form-control" value="<%= user._id %>" hidden/>
                                 <ul class="navbar-nav ml-auto">
-                                    <a id="save-btn" class="btn btn-primary" type="submit" href="/profile/edit/<%= userId %>" >Edit</a>
+                                    <input id="save-btn" class="btn btn-primary" type="submit" value="Save" >
                                 </ul>
                             </nav>
                             <div class="container">
@@ -30,57 +31,57 @@
                                     <div class="row-1">
                                         <b class="col-sm-2">First name</b>
                                         <div class="col-sm-2">
-                                            <%= user.firstName %>
+                                            <input name="firstName" class="form-control" value="<%= user.firstName %>" />
                                         </div>
                                         <b class="col-sm-2">Last name</b>
                                         <div class="col-sm-2">
-                                            <%= user.lastName %>
+                                            <input name="lastName" class="form-control" value="<%= user.lastName %>" />
                                         </div>
                                     </div>
                                 </br>
                                     <div class="row-1">   
                                         <b class="col-sm-4">OR fullname (as in passport)</b>
                                         <div class="col-sm-4">
-                                            <%= user.orFullname %>
+                                            <input name="orFullname" class="form-control" value="<%= user.orFullname %>" />
                                         </div>
                                     </div>
                                 <br>
                                     <div class="row-1">
                                         <b class="col-sm-2">Date of birth</b>
                                         <div class="col-sm-2">
-                                            <%= user.dateOfbirth %>
+                                            <input name="dateOfBirth" class="form-control" value="<%= user.dateOfbirth %>" />
                                         </div>
                                         <b class="col-sm-2">Gender</b>
                                         <div class="col-sm-2">
-                                            <%= user.gender %>
+                                            <input name="gender" class="form-control" value="<%= user.gender %>" />
                                         </div>
                                     </div>
                                 </br>
                                     <div class="row-1">
                                         <b class="col-sm-2">Nationality</b>
-                                        <div class="col-sm-6">
-                                            <%= user.nationality %>
+                                        <div class="col-sm-2">
+                                            <input name="nationality" class="form-control" value="<%= user.nationality %>" />
                                         </div>
                                     </div>
                                 </br>  
                                     <div class="row-1">
-                                        <b class="col-sm-4">Country of residence</b>
+                                        <b class="col-sm-2">Country of residence</b>
                                         <div class="col-sm-4">
-                                            <%= user.countryOfResidence %>
+                                            <input name="countryOfResidence" class="form-control" value="<%= user.countryOfResidence %>" />
                                         </div>
                                     </div>
                                 <br>
                                     <div class="row-1">
-                                        <b class="col-sm-4">Passport/ID card#</b>
+                                        <b class="col-sm-2">Passport/ID card#</b>
                                         <div class="col-sm-4">
-                                            <%= user.passport %>
+                                            <input name="passport" class="form-control" value="<%= user.passport %>" />
                                         </div>
                                     </div>
                                 </br>
                                     <div class="row-1">
                                         <b class="col-sm-2">Expired date</b>
-                                        <div class="col-sm-6">
-                                            <%= user.expiredDate %>
+                                        <div class="col-sm-2">
+                                            <input name="expiredDate" class="form-control" value="<%= user.expiredDate %>" />
                                         </div>
                                     </div>
                                 </div>
@@ -92,10 +93,12 @@
                                 </div>
                                 </div>
                             </div>
+                        </form>
+                        <% }) %>
                     </div>
-                <% }) %>
             </div>
             </div>
+
             <!-- Footer -->
             <%- include('layouts/footer'); -%>
                 <%- include('layouts/scripts'); -%>

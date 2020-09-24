@@ -3,7 +3,7 @@ const router = express.Router();
 var newschedule = require('../controllers/scheduleManagemenController');
 
 router.get('/', (req, res) => {
-    res.render('./patient/schedule-management', { title: 'Schedule management', layout: false });
+    newschedule.loadSchedule(req, res)
 });
 
 router.post('/', (req, res, next) => {

@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const mongoose = require('mongoose');
 const path = require('path');
 const multer = require('multer');
@@ -60,12 +61,15 @@ module.exports.accountLogin = function(req, res, next) {
                 console.log(user);
                 if (user) {
                     console.log(req.body);
-                    req.body.userId = user._id;
-                    req.body.userType = user.type;
-                    req.body.userFirstname = user.firstName;
-                    req.body.userLaststname = user.lasttName;
-                    return res.render('./patient/home', {user: user});
+                    req.session.userId = user._id;
+                    req.session.userType = user.type;
+                    // req.session.user = user;
+                    // req.session.userFirstname = user.firstName;
+                    // req.session.userLaststname = user.lasttName;
+                    // return res.render('./patient/home',{user : user});
+                    return res.redirect('/home');
                 }
+                res.redirect('/login');
             });
     } else {
         Patient.findOne().exec(function(err, patient) {});
@@ -165,3 +169,4 @@ exports.accountRegister = function(req, res) {
         };
     };
 }
+

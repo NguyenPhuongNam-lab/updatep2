@@ -4,7 +4,7 @@ var medicalreport_controller = require('../controllers/medicalReportController')
 
 
 router.get('/', (req, res, next) => {
-    res.render('./patient/medical-report', { title: 'Medical-report', layout: false });
+    medicalreport_controller.loadMedical(req, res, next)
 });
 router.post('/', (req, res, next) => {
     medicalreport_controller.addmedical(req, res, next);
