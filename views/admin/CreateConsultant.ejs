@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Create new hospital</title>
-    
+    <title>Create new Consultant</title>
+
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -16,101 +17,67 @@
     <!-- Custom styles for this template-->
     <link href="/css/admin.css" rel="stylesheet" type="text/css">
 </head>
+
 <body class="bg-gradient-primary">
     <div class="container" style="width: 728px;">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
-                 <!-- Nested Row within Card Body -->
-                 <div class="row ">
+                <!-- Nested Row within Card Body -->
+                <div class="row ">
                     <div class="col-lg-5 d-none d-lg-block"></div>
                     <div class="col-lg-7 ">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create new consultant</h1>
                             </div>
-                            <form action="" method="POST" >
-                                <div class="form-group align">
-                                    <div class="input-wrapper">
-                                        <label>First Name</label>
-                                        <input type="text" name="firstName" class="form-control" placeholder="Enter First Name" />
-                                        <div id="firstName-error" class="message-error"></div>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <label for="lastName">Last Name</label>
-                                        <input type="text" name="lastName" class="form-control" placeholder="Enter Last Name" />
-                                        <div id="lastName-error" class="message-error"></div>
-                                    </div>
-                                </div>
-                                <div class="input-wrapper">
-                                    <label>Or fullname  </label>
-                                    <input type="text" name="orFullname" class="form-control" placeholder="Or fullname" />
-                                </div>
-                                <div class="form-group align">
-                                    <div class="input-wrapper">
-                                        <label>Date of birth</label>
-                                        <input type="date" name="dateOfBirth" class="form-control" placeholder="Date of birth" />
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <label>Gender</label>
-                                        <input name="gender" class="form-control" placeholder="Gender" />
-                                    </div>
-                                </div>
-                                <div class="form-group align">
-                                    <div class="input-wrapper">
-                                        <label>Nationality</label>
-                                        <input name="nationality" class="form-control" placeholder="Nationality" />
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <label>Country of residence </label>
-                                        <input name="countryOfResidence" class="form-control" placeholder="Country of residence " />
-                                    </div>
-                                </div>
-                                <div class="form-group align">
-                                    <div class="input-wrapper">
-                                        <label>Email</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Email" />
-                                        <div id="email-error" class="message-error"></div>
-                                    </div>
-                                    <div class="input-wrapper">
-                                        <label for="mobile">Mobile #</label>
-                                        <input type="tel" name="mobile" class="form-control" placeholder="Mobile" />
-                                        <div id="mobile-error" class="message-error"></div>
-                                    </div>
-                                </div>
-                                <div class="input-wrapper">
-                                    <label>Username</label>
-                                    <input name="username" class="form-control" placeholder="Username" />
-                                    <div id="username-error" class="message-error"></div>
-                                </div>
-                                <div class="form-group align">
-                                    <div class="input-wrapper">
-                                        <label>Password</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Password" />
-                                        <div id="password-error" class="message-error"></div>
-                                    </div>
+                            <form action="/create-consultant" method="POST">
+                                <div class="form-group">
+                                    <label>Full name</label>
+                                    <input id="fullName" name="fullName" class="form-control" placeholder="Enter full name" />
                                 </div>
                                 <div class="form-group">
-                                    <input id="create-btn" class="btn btn-primary btn-user btn-block" type="submit" value="Create new consultant">
+                                    <label>Age</label>
+                                    <input type="number" id="Age" name="Age" class="form-control" placeholder="Enter age" />
                                 </div>
                                 <div class="form-group">
-                                    <a href="/admin" class="btn btn-primary btn-user btn-block">Return</a>
+                                    <label>Date of birth</label>
+                                    <input type="date" id="dateOfbirth" name="dateOfbirth" class="form-control" placeholder="YYYY-MM-DD" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <input id="Gender" name="Gender" class="form-control" placeholder="Enter gender" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Professional</label>
+                                    <input id="Professional" name="Professional" class="form-control" placeholder="Enter professional" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Address</label>
+                                    <input id="Address" name="Address" class="form-control" placeholder="Enter address" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="Enter phone number" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="Email" name="Email" class="form-control" placeholder="Enter email" />
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-create">Create new consultant</button>
+                                </div>
+                                <div class="form-group">
+                                    <a href="/admin" class="btn btn-primary btn-user btn-return">Return</a>
                                 </div>
                             </form>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <%- include('layouts/script'); -%>
 </body>
+
 </html>

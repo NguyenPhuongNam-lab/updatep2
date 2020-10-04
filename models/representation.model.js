@@ -1,28 +1,38 @@
 var mongoose = require('mongoose');
 
 var representativeSchema = new mongoose.Schema({
-    fullName:{
+    resourceType: {
+        type: String,
+    },
+    identifier: {
+        type: String,
+        required: 'this field is required'
+    },
+    fullName: {
         type: String
     },
-    Age:{
+    Age: {
         type: String
     },
-    address:{
+    dateOfBirth: {
+        type: Date
+    },
+    address: {
         type: String
     },
-    Gender:{
+    Gender: {
         type: String
     },
-    email:{
+    email: {
         type: String
     },
-    phone:{
+    phone: {
         type: String
     },
     hospital: {
         type: String
     },
-    position:{
+    position: {
         type: String
     }
 })

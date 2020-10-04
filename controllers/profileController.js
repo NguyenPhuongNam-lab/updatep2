@@ -1,5 +1,8 @@
 const express = require('express');
 const session = require('express-session');
+const path = require('path');
+const multer = require('multer');
+const { use } = require('../route/userRoute');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
@@ -45,7 +48,9 @@ exports.EditData = function(req, res){
 //     })
 // }
 
-exports.UpdateData = function(req, res){
+
+
+exports.UpdateData = function(req, res){   
     User.findByIdAndUpdate(
         { _id: req.params.id },
         { $set: {   firstName: req.body.firstName,
@@ -62,4 +67,5 @@ exports.UpdateData = function(req, res){
         .then((user) => {
             res.redirect('/profile/'+ req.session.userId)
         })
-}
+    }
+

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost:27017/hospitanica', { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
+mongoose.connect('mongodb://localhost:27017/Hospitanica', { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
     if (!err) {
         console.log('MongoDB Connection Succeeded!');
     } else {
@@ -9,22 +9,22 @@ mongoose.connect('mongodb://localhost:27017/hospitanica', { useUnifiedTopology: 
     }
 });
 
-mongoose.connection.on('open', function() {
-    mongoose.connection.db.listCollections().toArray(function(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            data.forEach(function(filter) {
-                console.log(filter.name);
-            })
-        }
-    });
-});
+// mongoose.connection.on('open', function() {
+//     mongoose.connection.db.listCollections().toArray(function(err, data) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             data.forEach(function(filter) {
+//                 console.log(filter.name);
+//             })
+//         }
+//     });
+// });
 
 require('./patient.model');
 require('./user.model');
 require('./medicalReport.model');
-require('./hospital.model');
+require('./watchList.model');
 require('./scheduleManagement.model');
 require('./listConsultant.model');
 require('./representation.model');

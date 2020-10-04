@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
     <meta name="author" content="">
 
     <title>Create new hospital</title>
-    
+
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -16,12 +17,13 @@
     <!-- Custom styles for this template-->
     <link href="/css/admin.css" rel="stylesheet" type="text/css">
 </head>
+
 <body class="bg-gradient-primary">
     <div class="container" style="width: 728px;">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
-                 <!-- Nested Row within Card Body -->
-                 <div class="row ">
+                <!-- Nested Row within Card Body -->
+                <div class="row ">
                     <div class="col-lg-5 d-none d-lg-block"></div>
                     <div class="col-lg-7 ">
                         <div class="p-5">
@@ -62,27 +64,20 @@
                                     <input type="position" id="position" name="position" class="form-control" placeholder="Enter position" />
                                 </div>
                                 <div class="form-group">
-                                    <input id="create-btn" class="btn btn-primary btn-user btn-block" type="submit" value="Create new representation">
+                                    <input id="create-btn" class="btn btn-primary btn-user  btn-create" type="submit" value="Create new representation">
                                 </div>
                                 <div class="form-group">
-                                    <a href="/admin" class="btn btn-primary btn-user btn-block">Return</a>
+                                    <a href="/admin" class="btn btn-primary btn-user btn-return">Return</a>
                                 </div>
                             </form>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <%- include('layouts/script'); -%>
 </body>
+
 </html>

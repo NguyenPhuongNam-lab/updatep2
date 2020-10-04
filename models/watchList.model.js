@@ -1,8 +1,13 @@
-require('./representation.model');
+const { fileLoader } = require('ejs');
 var mongoose = require('mongoose');
 
-
 var detailSchema = new mongoose.Schema({
+    resourceType: {
+        type: String
+    },
+    identifier: {
+        type: String,
+    },
     hospitalName: {
         type: String,
         required: 'This field is required.'
@@ -10,9 +15,6 @@ var detailSchema = new mongoose.Schema({
     address: {
         type: String,
         require: 'This field is required.'
-    },
-    open: {
-        type: String,
     },
     phoneNumber: {
         type: String,
@@ -23,11 +25,12 @@ var detailSchema = new mongoose.Schema({
     },
     description: {
         type: String,
+        require: 'This field is required.'
     },
-    Representation:[{
-        type: mongoose.Schema.Types.ObjectId,
-        ref : 'representation'
-    }]
+    imageHospital: {
+        type: String,
+
+    },
 });
 
-module.exports = mongoose.model('detail', detailSchema,'detail');
+module.exports = mongoose.model('Hospital', detailSchema, 'Hospital');

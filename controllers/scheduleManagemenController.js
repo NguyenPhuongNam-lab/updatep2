@@ -51,6 +51,8 @@ exports.scheduleNew = function(req, res) {
             }
         });
     }
+}
+
 function handleValidationError(err, body) {
     for (field in err.errors) {
         switch (err.errors[field].path) {
@@ -66,6 +68,5 @@ function handleValidationError(err, body) {
             default:
                 break;
         }
-    }
     }
 }

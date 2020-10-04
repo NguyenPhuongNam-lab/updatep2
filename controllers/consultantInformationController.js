@@ -16,16 +16,14 @@ exports.InsertInfor = function(req, res) {
     let id = req.params.id;
     Listc.findByIdAndUpdate(
         { _id: id },
-        { $set: {  
-                    orFullname: req.body.orFullname,
-                    dateOfBirth: req.body.dateOfBirth,
-                    gender: req.body.gender,
-                    nationality: req.body.nationality,
-                    countryOfResidence: req.body.countryOfResidence,
-                    email: req.body.email,
-                    mobile: req.body.mobile,
-                    username: req.body.username,
-                    password: req.body.password
+        { $set: {   fullName: req.body.fullName,
+                    Age: req.body.Age,
+                    dateOfbirth: req.body.dateOfbirth,
+                    Gender: req.body.Gender,
+                    Professional: req.body.Professional,
+                    Address: req.body.Address,
+                    phoneNumber: req.body.phoneNumber,
+                    Email: req.body.Email
                  } },
         { useFindAndModify: false })
         .then(doc => {

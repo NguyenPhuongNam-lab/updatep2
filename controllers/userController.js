@@ -1,5 +1,4 @@
 const express = require('express');
-const session = require('express-session');
 const mongoose = require('mongoose');
 const path = require('path');
 const multer = require('multer');
@@ -63,10 +62,6 @@ module.exports.accountLogin = function(req, res, next) {
                     console.log(req.body);
                     req.session.userId = user._id;
                     req.session.userType = user.type;
-                    // req.session.user = user;
-                    // req.session.userFirstname = user.firstName;
-                    // req.session.userLaststname = user.lasttName;
-                    // return res.render('./patient/home',{user : user});
                     return res.redirect('/home');
                 }
                 res.redirect('/login');
@@ -105,8 +100,6 @@ var validateFile = function(file, cb) {
 
 exports.accountRegister = function(req, res) {
     console.log(req.body);
-    // if (req.body.email && req.body.fullname && req.body.password && req.body.repassword) {
-    //     console.log(req.body);
     var user = new User();
     uploadPhoto(req, res, (error) => {
         if (error) {
@@ -169,4 +162,3 @@ exports.accountRegister = function(req, res) {
         };
     };
 }
-

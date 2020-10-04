@@ -7,53 +7,58 @@
 
         <!-- Navigation -->
         <%- include('layouts/navbar'); -%>
-
-            
-
             <!-- Post Content -->
-            <div class="container">
+            <div class="container-fluid">
                 <form action="" method="POST">
-                    <% detail.forEach((detail) => { %>
-                <div class="patient-prof">
-                <nav class="navbar navbar-expand-lg">
-                    <h3><%= detail.hospitalName %></h3>
-                    <ul class="navbar-nav ml-auto">
-                        <a href="/medical-report"  class="btn btn-primary btn-user btn-block">BOOK</a>
-                     </ul>
-                </nav>
-                <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="container-fluid">
-                            <div class="infor">
-                                Address: <%= detail.address %><br>
-                                Open:24 hours<br>
-                                Phone: <%= detail.phoneNumber %><br>
-                                Subsidiaries: <%= detail.subsidiaries %>
+                    <% hospital.forEach((Hospital) => { %>
+                        <div class="patient-prof">
+                            <nav class="navbar navbar-expand-lg">
+                                <h3>
+                                    <%= Hospital.hospitalName %>
+                                </h3>
+                                <ul class="navbar-nav ml-auto">
+                                    <a href="/medical-report" class="btn btn-primary btn-user btn-block">BOOK</a>
+                                </ul>
+                            </nav>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <div class="container-fluid">
+                                            <div class="infor">
+                                                Address:
+                                                <%= Hospital.address %>
+                                                    <br> Open:24 hours
+                                                    <br> Phone:
+                                                    <%= Hospital.phoneNumber %>
+                                                        <br> Subsidiaries:
+                                                        <%= Hospital.subsidiaries %>
+                                            </div>
+                                            <br>
+                                            <div class="introdu">
+                                                <%= Hospital.description %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="container-fluid">
+                                            <div class="pictr">
+                                                <img class="watching-img" src="/public/upload/<%= Hospital.imageHospital %>">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <br>
-                            <div class="introdu"><%= detail.description %></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="container-fluid">
-                            <div class="pictr">
-                                <img class="ptr" src="/img/JHH.jpg"/>
-                            </div>
-                            
-                        </div>
-                    </div>
+                            <% }) %>
+                </form>
                 </div>
-            </div>
-            <% }) %>
-            </form>
-            </div>
-            
 
-            <!-- Footer -->
 
-            <%- include('layouts/footer'); -%>
-                <%- include('layouts/scripts'); -%>
+                <!-- Footer -->
+
+                <%- include('layouts/footer'); -%>
+                    <%- include('layouts/logout'); -%>
+                        <%- include('layouts/scripts'); -%>
 
     </body>
 

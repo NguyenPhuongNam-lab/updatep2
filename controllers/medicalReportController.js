@@ -17,6 +17,7 @@ exports.loadMedical = function(req, res){
     })
 }
 
+
 exports.addmedical = function(req, res) {
     if (req.body.firstName && req.body.lastName && req.body.orFullname && req.body.gender) {
         console.log(req.body);
@@ -38,7 +39,7 @@ exports.addmedical = function(req, res) {
         medical.treatment = req.body.treatment;
         medical.medicalrecorfile = req.body.medicalrecorfile;
         console.log(medical);
-        medical.save((err, user) => {
+        medical.save((err, doc) => {
             if (!err)
                 res.redirect('/schedule-management');
             else {

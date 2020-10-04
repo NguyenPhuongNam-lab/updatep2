@@ -15,9 +15,9 @@ const scheduleManagementRoute = require('./route/scheduleManagementRoute');
 const aboutPatientRoute = require('./route/aboutPatientRoute');
 const supportRoute = require('./route/supportRoute');
 const profileRoute = require('./route/profileRoute');
-// const profileEditRoute = require('./route/profile-editRoute');
-// const yourbookingRoute = require('./route/yourbookingRoute');
 
+//ad
+const indexAdminRoute = require('./route/indexAdminRoute');
 const CreateHospitalRoute = require('./route/CreateHospitalRoute');
 const listHospitalRoute = require('./route/listHospitalRoute');
 const listConsultantRoute = require('./route/listConsultantRoute');
@@ -49,6 +49,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use('/public', express.static(__dirname + '/public/'));
 //
 app.use(cookieParser());
 app.use(session({
@@ -68,8 +69,6 @@ var authencation = function(req, res, next) {
     next()
 }
 
-app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
-
 app.use(authencation);
 
 app.use('/', userRoute);
@@ -80,9 +79,9 @@ app.use('/schedule-management', scheduleManagementRoute);
 app.use('/about', aboutPatientRoute);
 app.use('/support', supportRoute);
 app.use('/profile',profileRoute);
-// app.use('/your-booking',yourbookingRoute);
-// app.use('/profile-edit',profileEditRoute);
+
 //admin
+app.use('/', indexAdminRoute);
 app.use('/create-hospital', CreateHospitalRoute);
 app.use('/list-hospital', listHospitalRoute);
 app.use('/create-consultant', createConsultantRoute)
@@ -96,12 +95,8 @@ app.use('/representation-information', representationInformationRoute);
 app.use('/list-patient', listPatientRoute);
 app.use('/information-patient', InformationPatientRoute);
 
-
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 
-app.get('/admin', (request, response) => {
-    response.render('./admin/index');
-});
 
 app.listen(4000, () => {
     console.log('App listening on port 4000');
@@ -122,7 +117,5 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
-
 
 module.exports = app;

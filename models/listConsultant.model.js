@@ -1,46 +1,37 @@
 var mongoose = require('mongoose');
 
 var consultantSchema = new mongoose.Schema({
-    firstName: {
+    resourceType: {
         type: String,
-        required: 'This field is required.'
     },
-    lastName: {
+    identifier: {
         type: String,
-        required: 'This field is required.'
+        required: 'this field is required'
     },
-    orFullname: {
+    fullName: {
+        type: String
+    },
+    Age: {
         type: String
     },
     dateOfbirth: {
         type: Date
     },
-    gender: {
+    Gender: {
         type: String
     },
-    nationality: {
+    Professional: {
         type: String
     },
-    countryOfResidence: {
+    Address: {
         type: String
     },
-    email: {
-        type: String,
-        required: 'This field is required.'
+    phoneNumber: {
+        type: String
     },
-    mobile: {
-        type: String,
-    },
-    username: {
-        type: String,
-    },
-    password: {
-        type: String,
-        required: 'This field is required.',
-    },
-    type: {
-        type: Number
+    Email: {
+        type: String
     }
-})
+});
 
 module.exports = mongoose.model('listc', consultantSchema, 'listc');

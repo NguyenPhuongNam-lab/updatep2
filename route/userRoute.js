@@ -1,16 +1,15 @@
 const express = require('express');
 const router = express.Router();
 var user_controller = require('../controllers/userController');
-var auth = require('../middlewares/auth');
-
 // var user_controller = require('../controllers/accountController');
+var auth = require('../middlewares/auth');
 
 
 router.get('/', (request, response) => {
     response.render('./patient/index');
 });
 
-router.get('/home',auth, (req, res, next) => {
+router.get('/home',auth, (req, res) => {
     res.render('./patient/home', {title: 'Dashboard', indexSlideBarActive: true, userId: req.session.userId});
 });
 
@@ -41,6 +40,5 @@ router.get('/logout', function(req, res, next) {
     req.session.destroy();
     res.redirect('/login');
 });
-
 
 module.exports = router;

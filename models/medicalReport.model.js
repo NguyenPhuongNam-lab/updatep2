@@ -1,6 +1,13 @@
 var mongoose = require('mongoose');
 
 var medicalSchema = new mongoose.Schema({
+    resourceType: {
+        type: String,
+    },
+    identifier: {
+        type: String,
+        required: 'this field is required'
+    },
     firstName: {
         type: String,
         required: 'This field is required.'
@@ -40,9 +47,11 @@ var medicalSchema = new mongoose.Schema({
     },
     languagesupport: {
         type: String,
+        required: 'This field is required.'
     },
     medicalHistory: {
         type: String,
+        required: 'This field is required.'
     },
     diagnosis: {
         type: String,

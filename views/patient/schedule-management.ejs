@@ -14,7 +14,7 @@
                     <form action="" method="POST">
                         <div class="patient-prof">
                             <h2>Manage your booking</h2><br>
-                            <h5>You want to book an appointment for</h5><br>
+                            <h4>You want to book an appointment for</h4><br>
                             <div class="row-1">
                                 <div class="col-sm-2">
                                     <input type="radio" name="booking" /> Relatives
@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                             <br>
-                            <h5>Patient information</h5><br>
+                            <h4>Patient information</h4><br>
                             <div class="row-1">
                                 <div class="col-sm-6">
                                     <input name="fullName" class="form-control" value="Fullname" />
@@ -89,7 +89,7 @@
                             <br>
                             <div class="row-1">
                                 <ul class="navbar-nav ml-auto">
-                                    <input id="book-btn" class="btn-book" type="submit" value="Book an appointment">
+                                    <a href="home" class="btn btn-primary btn-user btn-send">Book an appointment</a>
                                 </ul>
                             </div>
                         </div>
@@ -100,7 +100,8 @@
             <!-- Footer -->
 
             <%- include('layouts/footer'); -%>
-                <%- include('layouts/scripts'); -%>
+                <%- include('layouts/logout'); -%>
+                    <%- include('layouts/scripts'); -%>
 
 
     </body>

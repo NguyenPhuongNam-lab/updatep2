@@ -1,6 +1,7 @@
+require('../controllers/createhospitalController');
 const express = require('express');
 const mongoose = require('mongoose');
-const List = mongoose.model('detail')
+const List = mongoose.model('Hospital');
 
 exports.LoadList = function(req, res) {
     List.findById(req.params.iD, (err, list) => {
@@ -10,19 +11,21 @@ exports.LoadList = function(req, res) {
         }
         res.render('./admin/hospitalInformation', { list: list });
     })
-}
+};
 
 exports.InserList = function(req, res) {
     let iD = req.params.iD;
-    List.findByIdAndUpdate(
-        { _id: iD },
-        { $set: {   hospitalName: req.body.hospitalName,
-                    phoneNumber: req.body.phoneNumber,
-                    address: req.body.address,
-                    subsidiaries: req.body.subsidiaries,
-                    description: req.body.description
-                 } },
-        { useFindAndModify: false })
+    // var imageHospital = "/public/upload/hospital/" + req.file.filename + ".jpg";
+    List.findByIdAndUpdate({ _id: iD }, {
+            $set: {
+                hospitalName: req.body.hospitalName,
+                address: req.body.address,
+                phoneNumber: req.body.phoneNumber,
+                subsidiaries: req.body.subsidiaries,
+                description: req.body.description,
+                imageHospital: req.body.imageHospital
+            }
+        }, { useFindAndModify: false })
         .then(doc => {
             res.redirect('/list-hospital')
         })

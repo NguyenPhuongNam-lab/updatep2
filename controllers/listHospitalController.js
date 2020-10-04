@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const List = mongoose.model('detail')
+const List = mongoose.model('Hospital')
 
-exports.LoadHospital = function(req, res ){
+exports.LoadHospital = function(req, res) {
     List.find({})
-    .then(Lists => {
-        res.render('./admin/listHospital', {Lists : Lists})
-    })
-    .catch(err => {
-        console.log('Error: ', err);
-        throw err;
-    })
-}; 
+        .then(Lists => {
+            res.render('./admin/listHospital', { Lists: Lists })
+        })
+        .catch(err => {
+            console.log('Error: ', err);
+            throw err;
+        })
+};

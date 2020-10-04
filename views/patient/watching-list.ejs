@@ -8,7 +8,7 @@
         <!-- Navigation -->
         <%- include('layouts/navbar'); -%>
             <!-- Post Content -->
-            
+
             <div class="row">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg">
@@ -24,27 +24,28 @@
             <div id="function">
                 <div class="container">
                     <div class="mains">
-                        <% Details.forEach((detail) => { %>
+                        <% Hospitals.forEach((hospital) => { %>
                             <div class="forms">
                                 <div class="container">
                                     <nav class="navbar navbar-expand-lg">
-                                        <input class="form-control" type="text" name="iD" valua="<%= detail.id %>" hidden/>
+                                        <input class="form-control" type="text" name="iD" valua="<%= hospital.id %>" hidden/>
                                         <h4>
-                                            <%= detail.hospitalName %>
+                                            <%= hospital.hospitalName %>
                                         </h4>
                                         <ul class="navbar-nav ml-auto">
                                             <form class="form-inline" action="">
-                                                <a href="/information-hospital/<%= detail.id %>" id="save-btn" class="btn btn-primary btn-user btn-block btn-search">View</a> </form>
+                                                <a href="/information-hospital/<%= hospital.id %>" id="save-btn" class="btn btn-primary btn-user btn-search">View</a> </form>
                                         </ul>
                                     </nav>
                                 </div>
                                 <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-8">
-                                            <%= detail.description %>
+                                    <div class="watching-list-content">
+                                        <div class=" col-sm-6">
+                                            <%= hospital.description %>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <img class="img-ptr" src="/img/JHH.jpg" />
+                                        <div class="form-group">
+                                            <!-- <label for="img">Image Hospital</label> -->
+                                            <img class="watching-img" src="/public/upload/<%= hospital.imageHospital %>">
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +81,8 @@
             <!-- Footer -->
 
             <%- include('layouts/footer'); -%>
-                <%- include('layouts/scripts'); -%>
+                <%- include('layouts/logout'); -%>
+                    <%- include('layouts/scripts'); -%>
 
     </body>
 

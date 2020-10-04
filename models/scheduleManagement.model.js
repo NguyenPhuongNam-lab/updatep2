@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 
 var scheduleSchema = new mongoose.Schema({
+    resourceType: {
+        type: String,
+    },
+    identifier: {
+        type: String,
+        required: 'this field is required'
+    },
     relative: {
         type: String,
     },

@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 
 const patientSchema = new Schema({
     resourceType: {
-        type: String
+        type: String,
+    },
+    identifier: {
+        type: String,
+        required: 'this field is required'
     },
     account: {
         type: mongoose.Schema.Types.ObjectId,
